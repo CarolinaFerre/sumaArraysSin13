@@ -1,0 +1,49 @@
+package ejerciciosdearrays;
+
+import java.util.Arrays;
+
+public class sumaNumeros {
+	static int suma;
+	static int[] newsum13;
+	
+	public static int[] matrizSin13(int[] nums,int numeroprohibido) {
+		int longitud=0;
+		for(int i=0;i<nums.length;i++) {
+			longitud++;
+		}
+		newsum13=new int[longitud];
+		
+		for(int i=0;i<nums.length;i++) {
+			if(nums[i]==numeroprohibido) {
+				nums[i]=0;
+				
+			}else {
+				newsum13[i]=nums[i];
+			}
+		}
+		return newsum13;
+		
+	}
+	public static int sumaMatriz(int[]newsum13) {
+		for(int i=0;i<newsum13.length;i++) {
+			if(newsum13.length==0) {
+				return 0;
+			}else {
+			suma+=newsum13[i];
+		}
+		
+		}
+		
+		return suma;
+	}
+	
+	public static void main(String[] args) {
+		int numeroprohibido=13;
+		int[] nums= {3,4,7,13};
+		System.out.println(Arrays.toString(sumaNumeros.matrizSin13(nums,numeroprohibido)));
+		
+		System.out.println(sumaNumeros.sumaMatriz(newsum13));
+		
+
+	}
+}
